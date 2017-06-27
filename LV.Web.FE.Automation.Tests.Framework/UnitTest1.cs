@@ -9,6 +9,7 @@ namespace LV.Web.FE.Automation.Tests.Framework
         [TestMethod]
         public void TestMethod1()
         {
+            Console.WriteLine("Hello World");
         }
     }
 }
