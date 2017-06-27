@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LV.Web.FE.Automation.Tests.Framework", "LV.Web.FE.Automation.Tests.Framework\LV.Web.FE.Automation.Tests.Framework.csproj", "{74997CD3-0F5D-4250-81F1-59667761786D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automated Tests", "Automated Tests\Automated Tests.csproj", "{724DEBF8-39DB-4255-8F6A-276242E0CE50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation Tests Framework", "Automation Tests Framework\Automation Tests Framework.csproj", "{AE566DA4-2677-4E99-A34A-F72B051C0AE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{74997CD3-0F5D-4250-81F1-59667761786D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74997CD3-0F5D-4250-81F1-59667761786D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74997CD3-0F5D-4250-81F1-59667761786D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74997CD3-0F5D-4250-81F1-59667761786D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724DEBF8-39DB-4255-8F6A-276242E0CE50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724DEBF8-39DB-4255-8F6A-276242E0CE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724DEBF8-39DB-4255-8F6A-276242E0CE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724DEBF8-39DB-4255-8F6A-276242E0CE50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE566DA4-2677-4E99-A34A-F72B051C0AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE566DA4-2677-4E99-A34A-F72B051C0AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE566DA4-2677-4E99-A34A-F72B051C0AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE566DA4-2677-4E99-A34A-F72B051C0AE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LV.Web.FE.Automation.Tests.Framework
+namespace Automation_Tests_Framework
 {
     [TestClass]
     public class UnitTest1
@@ -9,7 +9,6 @@ namespace LV.Web.FE.Automation.Tests.Framework
         [TestMethod]
         public void TestMethod1()
         {
-            Console.WriteLine("Hello World");
         }
     }
 }
