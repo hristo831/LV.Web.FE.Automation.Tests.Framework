@@ -15,10 +15,10 @@ namespace Automation_Tests_Framework.Base_Classes
 {
     public class BaseClass
     {
-        private static IWebDriver GetChromeDriver()
+        private static IWebDriver GetChromeDriver() 
         {
             IWebDriver driver = new ChromeDriver();
-            return driver;
+            return driver; 
         }
 
         private static IWebDriver GetIExplorerDriver()
