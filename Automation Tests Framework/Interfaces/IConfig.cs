@@ -9,10 +9,11 @@ namespace Automation_Tests_Framework.Interfaces
 {
     public interface IConfig
     {
-        BrowserType GetBrowser();
+        BrowserType? GetBrowser();
         string GetBankName();
         string GetUsername();
         string GetPassword();
+        string GetWebsite();
 
     }
 }

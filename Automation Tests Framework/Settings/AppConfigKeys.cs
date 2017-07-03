@@ -12,5 +12,6 @@ namespace Automation_Tests_Framework.Settings
         public const string BankName = "BankName";
         public const string Username = "Username";
         public const string Password = "Password";
+        public const string Website = "Website";
     }
 }

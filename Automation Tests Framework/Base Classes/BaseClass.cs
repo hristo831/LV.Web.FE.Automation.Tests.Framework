@@ -13,17 +13,33 @@ using OpenQA.Selenium.IE;
 
 namespace Automation_Tests_Framework.Base_Classes
 {
+    [TestClass]
     public class BaseClass
     {
+        private static ChromeOptions GetChromeOptions()
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("start-maximized");
+            return options;
+        }
+
+        private static InternetExplorerOptions GetIEOptions()
+        {
+            InternetExplorerOptions options = new InternetExplorerOptions();
+            options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+            options.EnsureCleanSession = true;
+            return options;
+        }
+
         private static IWebDriver GetChromeDriver() 
         {
-            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver = new ChromeDriver(GetChromeOptions());
             return driver; 
         }
 
         private static IWebDriver GetIExplorerDriver()
         {
-            IWebDriver driver = new InternetExplorerDriver();
+            IWebDriver driver = new InternetExplorerDriver(GetIEOptions());
             return driver;
         }
 
@@ -35,16 +51,27 @@ namespace Automation_Tests_Framework.Base_Classes
             switch (ObjectRepository.Config.GetBrowser())
             {
                 case BrowserType.Chrome:
-                         ObjectRepository.Driver = GetChromeDriver();
-                         break;
+                    ObjectRepository.Driver = GetChromeDriver();
+                    break;
 
                 case BrowserType.IExplorer:
-                         ObjectRepository.Driver = GetIExplorerDriver();
-                         break;
+                    ObjectRepository.Driver = GetIExplorerDriver();
+                    break;
 
                 default:
-                    throw new NoSutiableDriverFound("Driver Not Found : " + ObjectRepository.Config.GetBrowser().ToString());
+                    throw new NoSutiableDriverFound("Driver Not Found : " +
+                                                    ObjectRepository.Config.GetBrowser().ToString());
             }
         }
+
+        [AssemblyCleanupAttribute]
+        public static void TearDown()
+            {
+                if (ObjectRepository.Driver != null)
+                {
+                    ObjectRepository.Driver.Close();
+                    ObjectRepository.Driver.Quit();
+                }
+            }
     }
 }
