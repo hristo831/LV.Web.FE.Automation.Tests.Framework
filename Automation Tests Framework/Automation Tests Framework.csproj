@@ -67,6 +67,9 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomExeption\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
+    <Compile Include="Pages\Login\LoginPage .cs" />
+    <Compile Include="Pages\Login\LoginPage.cs" />
+    <Compile Include="Pages\PageObjects.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
     <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />

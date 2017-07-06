@@ -9,7 +9,7 @@ using Automation_Tests_Framework.Settings;
 
 namespace Automation_Tests_Framework.Configuration
 {
-    public class AppConfigReader : IConfig
+    public  class AppConfigReader : IConfig
     {
         public BrowserType? GetBrowser()
         {
@@ -17,7 +17,7 @@ namespace Automation_Tests_Framework.Configuration
             return (BrowserType) Enum.Parse(typeof (BrowserType), browser);
         }
 
-        public string GetBankName()
+        public  string GetBankName()
         {
             return ConfigurationManager.AppSettings.Get(AppConfigKeys.BankName);
         }
