@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AE566DA4-2677-4E99-A34A-F72B051C0AE0}</ProjectGuid>
+    <ProjectGuid>{445523A2-ABC3-4B30-8E6F-98722F9C27F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Automation_Tests_Framework</RootNamespace>
-    <AssemblyName>Automation Tests Framework</AssemblyName>
+    <RootNamespace>Automation_Tests</RootNamespace>
+    <AssemblyName>Automation Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -41,8 +41,11 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Drawing" />
     <Reference Include="TechTalk.SpecFlow, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.2.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
@@ -70,26 +73,30 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Base Classes\BaseClass.cs" />
-    <Compile Include="Configuration\AppConfigReader.cs" />
-    <Compile Include="Configuration\BrowserType.cs" />
-    <Compile Include="CustomExeption\NoSutiableDriverFound.cs" />
-    <Compile Include="Interfaces\IConfig.cs" />
-    <Compile Include="Pages\Login\LoginPage .cs" />
-    <Compile Include="Pages\Login\LoginPage.cs" />
-    <Compile Include="Pages\PageObjects.cs" />
-    <Compile Include="Settings\AppConfigKeys.cs" />
-    <Compile Include="Settings\ObjectRepository.cs" />
-    <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="StepDefinition\LoginTest.cs" />
+    <Compile Include="TestFeatureFiles\LoginTest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginTest.feature</DependentUpon>
+    </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="TestFeatureFiles\LoginTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LoginTest.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Automation Tests Framework\Automation Tests Framework.csproj">
+      <Project>{ae566da4-2677-4e99-a34a-f72b051c0ae0}</Project>
+      <Name>Automation Tests Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

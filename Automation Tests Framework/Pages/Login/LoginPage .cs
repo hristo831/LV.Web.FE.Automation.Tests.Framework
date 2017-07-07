@@ -1,19 +1,23 @@
-﻿using Automation_Tests_Framework.Configuration;
+﻿using System.Threading;
+using Automation_Tests_Framework.Configuration;
 using OpenQA.Selenium;
 
 namespace Automation_Tests_Framework.Pages.Login
 {
     public  partial class LoginPage
     {
-        private LoginPage BankName(string bankName = null)
+        readonly AppConfigReader _getBankName = new AppConfigReader();
+        private void BankName(string bankName = null)
         {
-            AppConfigReader getBankName = new AppConfigReader();
-            bankName = bankName ?? getBankName.GetBankName();
+            bankName = bankName ?? _getBankName.GetBankName();
             Bank.Clear();
             Bank.SendKeys(bankName);
-            return this;
+            //return this;
         }
 
-        public 
+        public void FullLogin()
+        {
+            BankName();
+        }
     }
 }
