@@ -1,4 +1,6 @@
 ﻿using System;
+using Automation_Tests_Framework.Pages;
+using Automation_Tests_Framework.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Automation_Tests
@@ -9,6 +11,8 @@ namespace Automation_Tests
         [TestMethod]
         public void TestMethod1()
         {
+            ObjectRepository.Driver.Navigate().GoToUrl(ObjectRepository.Config.GetWebsite());
+            PageObjects.LoginPage.FullLogin();
         }
     }
 }

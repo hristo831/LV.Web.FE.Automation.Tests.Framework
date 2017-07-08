@@ -14,6 +14,10 @@ namespace Automation_Tests_Framework.Interfaces
         string GetUsername();
         string GetPassword();
         string GetWebsite();
+        int GetPageLoadTimeOut();
+        int GetElementLoadTimeOut();
+
+
 
     }
 }

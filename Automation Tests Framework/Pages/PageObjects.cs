@@ -5,7 +5,7 @@ using Automation_Tests_Framework.Pages.Login;
 
 namespace Automation_Tests_Framework.Pages
 {
-    class PageObjects
+     public class PageObjects
     {
         private static T GetPage<T>() where T : new()
         {

@@ -10,10 +10,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
+using TechTalk.SpecFlow;
 
 namespace Automation_Tests_Framework.Base_Classes
 {
     [TestClass]
+
     public class BaseClass
     {
         private static ChromeOptions GetChromeOptions()
@@ -62,6 +64,8 @@ namespace Automation_Tests_Framework.Base_Classes
                     throw new NoSutiableDriverFound("Driver Not Found : " +
                                                     ObjectRepository.Config.GetBrowser().ToString());
             }
+            ObjectRepository.Driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeOut()));
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(ObjectRepository.Config.GetElementLoadTimeOut()));
         }
 
         [AssemblyCleanupAttribute]
