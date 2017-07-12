@@ -8,54 +8,40 @@ namespace Automation_Tests_Framework.Pages.Login
 {
     public  partial class LoginPage
     {
-        private void BankName(string bankName = null)
+        private void EnterBankName(string bankName = null)
         {
-            //bankName = bankName ?? ObjectRepository.Config.GetBankName();
-            //Bank.Clear();
-            //Bank.SendKeys(bankName);
-            TypeInTextBox(Bank, ObjectRepository.Config.GetBankName());
-
+            bankName = bankName ?? ObjectRepository.Config.GetBankName();
+            Bank.Clear();
+            Bank.SendKeys(bankName);
         }
 
-        private void UserName(string userName = null)
+        private void EnterLoginName(string loginName = null)
         {
-            userName = userName ?? ObjectRepository.Config.GetUsername();
+            loginName = loginName ?? ObjectRepository.Config.GetUsername();
+            LoginName.Clear();
+            LoginName.SendKeys(loginName);
+        }
 
+        private void EnterPassword(string password = null)
+        {
+            password = password ?? ObjectRepository.Config.GetPassword();
+            Password.Clear();
+            Password.SendKeys(password);
+        }
+
+        private void ClickLoginButton()
+        {
+            LoginButton.Click();
         }
 
         public void FullLogin()
         {
-            BankName();
+            EnterBankName();
+            EnterLoginName();
+            EnterPassword();
+            ClickLoginButton();
         }
 
-        public static void TypeInTextBox(IWebElement element, string text)
-        {
-            //element = GenericHelper.GetElement(locator);
-            element.Clear();
-            element.SendKeys(text);
-            //Logger.Info($" Type in Textbox @ {locator} : value : {text}");
-        }
-
-       /* public static IWebElement GetElement(By locator)
-        {
-            if (IsElemetPresent(locator))
-                return ObjectRepository.Driver.FindElement(locator);
-            else
-                throw new NoSuchElementException("Element Not Found : " + locator.ToString());
-        }
-
-        public static bool IsElemetPresent(IWebElement element)
-        {
-            try
-            {
-                //Logger.Info(" Checking for the element " + locator);
-                return ObjectRepository.Driver.;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-        }*/
+        
     }
 }
