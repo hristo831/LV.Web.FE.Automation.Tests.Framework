@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Automation_Tests_Framework.Pages;
+using Automation_Tests_Framework.Settings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
-namespace Automation_Tests.StepDefinition
+namespace Automation_Tests_Framework.StepDefinition
 {
     [Binding]
     public sealed class LoginTest
@@ -13,7 +11,8 @@ namespace Automation_Tests.StepDefinition
         [Given(@"Go to Login Page")]
         public void GivenGoToLoginPage()
         {
-            ScenarioContext.Current.Pending();
+            ObjectRepository.Driver.Navigate().GoToUrl(ObjectRepository.Config.GetWebsite());
+            PageObjects.LoginPage.FullLogin();
         }
 
         [Then(@"I am on the Login Page")]

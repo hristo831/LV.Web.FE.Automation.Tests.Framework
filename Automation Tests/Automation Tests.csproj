@@ -73,22 +73,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="StepDefinition\LoginTest.cs" />
-    <Compile Include="TestFeatureFiles\LoginTest.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginTest.feature</DependentUpon>
-    </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="TestFeatureFiles\LoginTest.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>LoginTest.feature.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Automation Tests Framework\Automation Tests Framework.csproj">

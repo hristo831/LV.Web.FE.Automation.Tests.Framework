@@ -73,14 +73,21 @@
     <Compile Include="Base Classes\BaseClass.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
+    <Compile Include="Pages\Portal\PortalPageElements.cs" />
+    <Compile Include="Pages\Portal\PortalPage.cs" />
+    <Compile Include="StepDefinition\LoginTest.cs" />
     <Compile Include="CustomExeption\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
-    <Compile Include="Pages\Login\LoginPage .cs" />
     <Compile Include="Pages\Login\LoginPage.cs" />
+    <Compile Include="Pages\Login\LoginPageElements.cs" />
     <Compile Include="Pages\PageObjects.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
-    <Compile Include="TestScript\PageNavigation\TestPageNavigation.cs" />
+    <Compile Include="TestFeatureFiles\LoginTest.feature.cs">
+      <DependentUpon>LoginTest.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +96,13 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="TestFeatureFiles\LoginTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LoginTest.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ComponentHelper\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
