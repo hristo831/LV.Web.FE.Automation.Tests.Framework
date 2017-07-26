@@ -10,6 +10,6 @@ namespace Automation_Tests_Framework.Pages.Portal
 {
     public partial class PortalPage
     {
-        [FindsBy(How = By)]
+       
     }
 }

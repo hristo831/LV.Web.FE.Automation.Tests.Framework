@@ -83,6 +83,11 @@
     <Compile Include="Pages\PageObjects.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="TestFeatureFiles\CustomerPortalTest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerPortalTest.feature</DependentUpon>
+    </Compile>
     <Compile Include="TestFeatureFiles\LoginTest.feature.cs">
       <DependentUpon>LoginTest.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -96,6 +101,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="TestFeatureFiles\CustomerPortalTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomerPortalTest.feature.cs</LastGenOutput>
+    </None>
     <None Include="TestFeatureFiles\LoginTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LoginTest.feature.cs</LastGenOutput>
