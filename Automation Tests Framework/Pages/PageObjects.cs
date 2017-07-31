@@ -2,10 +2,11 @@
 using OpenQA.Selenium.Support.PageObjects;
 using Automation_Tests_Framework.Pages;
 using Automation_Tests_Framework.Pages.Login;
+using Automation_Tests_Framework.Pages.Portal;
 
 namespace Automation_Tests_Framework.Pages
 {
-     public class PageObjects
+     public static class PageObjects
     {
         private static T GetPage<T>() where T : new()
         {
@@ -18,5 +19,10 @@ namespace Automation_Tests_Framework.Pages
         {
             get { return GetPage<LoginPage>(); }
         }
+
+         public static PortalPage PortalPage
+         {
+             get { return GetPage<PortalPage>(); }
+         }
     }
 }

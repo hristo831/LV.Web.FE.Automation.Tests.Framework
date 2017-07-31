@@ -8,5 +8,10 @@ namespace Automation_Tests_Framework.Pages.Portal
 {
     public partial class PortalPage
     {
+        public void TypeInUniversalSearch(string text )
+        {
+            UniversalSearch.Clear();
+            UniversalSearch.SendKeys(text);
+        }
     }
 }

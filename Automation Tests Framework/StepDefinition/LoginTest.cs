@@ -12,14 +12,22 @@ namespace Automation_Tests_Framework.StepDefinition
         public void GivenGoToLoginPage()
         {
             ObjectRepository.Driver.Navigate().GoToUrl(ObjectRepository.Config.GetWebsite());
+        }
+
+
+        [Given(@"Login")]
+        public void GivenLogin()
+        {
             PageObjects.LoginPage.FullLogin();
         }
 
-        [Then(@"I am on the Login Page")]
-        public void ThenIAmOnTheLoginPage()
+
+        [Then(@"I am on Portal page")]
+        public void ThenIAmOnPortalPage()
         {
-            Assert.IsFalse(true);
+            Assert.IsTrue(PageObjects.PortalPage.HomeDropdown.Displayed);
         }
+
 
 
     }

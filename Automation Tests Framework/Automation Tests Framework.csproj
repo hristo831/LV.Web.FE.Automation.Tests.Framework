@@ -75,6 +75,7 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="Pages\Portal\PortalPageElements.cs" />
     <Compile Include="Pages\Portal\PortalPage.cs" />
+    <Compile Include="StepDefinition\CustomerPortalTest.cs" />
     <Compile Include="StepDefinition\LoginTest.cs" />
     <Compile Include="CustomExeption\NoSutiableDriverFound.cs" />
     <Compile Include="Interfaces\IConfig.cs" />

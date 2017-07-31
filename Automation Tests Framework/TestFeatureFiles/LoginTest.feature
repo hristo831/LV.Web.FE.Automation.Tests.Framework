@@ -1,8 +1,9 @@
-﻿Feature: Login
+﻿Feature: Open Login page, Login and go to Portal Page 
 
-Scenario: Test Login Page
+Scenario: Go to Portal Page
 
 	Given Go to Login Page
-	Then I am on the Login Page
+	And Login
+	Then I am on Portal page
 
 
